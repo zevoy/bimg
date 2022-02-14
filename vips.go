@@ -261,6 +261,10 @@ func vipsHasAlpha(image *C.VipsImage) bool {
 	return int(C.has_alpha_channel(image)) > 0
 }
 
+func vipsPageNum(image *C.VipsImage) int {
+	return int(C.vips_image_get_n_pages(image))
+}
+
 func vipsHasProfile(image *C.VipsImage) bool {
 	return int(C.has_profile_embed(image)) > 0
 }

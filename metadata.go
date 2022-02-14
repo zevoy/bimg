@@ -185,7 +185,7 @@ func Metadata(buf []byte) (ImageMetadata, error) {
 		Profile:     vipsHasProfile(image),
 		Space:       vipsSpace(image),
 		Type:        ImageTypeName(imageType),
-		PageNum:     0,
+		PageNum:     vipsPageNum(image),
 		EXIF: EXIF{
 			Make:                    vipsExifStringTag(image, Make),
 			Model:                   vipsExifStringTag(image, Model),
