@@ -77,6 +77,7 @@ type ImageMetadata struct {
 	Space       string
 	Colourspace string
 	Size        ImageSize
+	PageNum     int
 	EXIF        EXIF
 }
 
@@ -184,6 +185,7 @@ func Metadata(buf []byte) (ImageMetadata, error) {
 		Profile:     vipsHasProfile(image),
 		Space:       vipsSpace(image),
 		Type:        ImageTypeName(imageType),
+		PageNum:     vipsPageNum(image),
 		EXIF: EXIF{
 			Make:                    vipsExifStringTag(image, Make),
 			Model:                   vipsExifStringTag(image, Model),
